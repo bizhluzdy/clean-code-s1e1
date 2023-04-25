@@ -8,8 +8,8 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.getElementsByClassName("list-form_text")[0];//Add a new task.
-var addButton=document.getElementsByClassName("list-form_add-button")[0];//first button
+var taskInput=document.getElementsByClassName("list-form__text")[0];//Add a new task.
+var addButton=document.getElementsByClassName("list-form__add-button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -33,22 +33,22 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='list-form_label';
+    label.className='list-form__label';
     listItem.className="list-form"
-    checkBox.className="list-form_checkbox"
+    checkBox.className="list-form__checkbox"
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
-    editInput.className="list-form_text";
+    editInput.className="list-form__text";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="list-form_edit-button";
+    editButton.className="list-form__edit-button";
     editButton.addEventListener('click', editTask);
 
-    deleteButton.className="list-form_remove-button";
+    deleteButton.className="list-form__remove-button";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.alt="remove button"
-    deleteButtonImg.className="list-form_remove-button_img"
+    deleteButtonImg.className="list-form__button-img"
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -81,10 +81,10 @@ var editTask = function() {
     console.log("Change 'edit' to 'save'");
   
     var listItem = this.parentNode;
-    var editInput = listItem.querySelector('.list-form_text');
-    var label = listItem.querySelector(".list-form_label");
-    var editBtns = listItem.querySelectorAll(".list-form_edit-button");
-    var containsClass = listItem.classList.contains("list-form_edit");
+    var editInput = listItem.querySelector('.list-form__text');
+    var label = listItem.querySelector(".list-form__label");
+    var editBtns = listItem.querySelectorAll(".list-form__edit-button");
+    var containsClass = listItem.classList.contains("list-form__edit");
   
     //If class of the parent is .editmode
     if (containsClass) {
@@ -99,10 +99,10 @@ var editTask = function() {
     }
   
     //toggle .editmode on the parent.
-    listItem.classList.toggle("list-form_edit");
+    listItem.classList.toggle("list-form__edit");
 };
 
-var editBtns = document.querySelectorAll('.list-form_edit-button');
+var editBtns = document.querySelectorAll('.list-form__edit-button');
 
 for (var i = 0; i < editBtns.length; i++) {
     editBtns[i].addEventListener('click', editTask);
@@ -126,8 +126,8 @@ var deleteTask=function(){
 var taskCompleted = function () {
     console.log("Complete Task...");
         // Remove event listeners from the checkbox and delete button
-    var checkBox = this.parentNode.querySelector('.list-form_checkbox');
-    var deleteButtonComplete = this.parentNode.querySelector('.list-form_remove-button');
+    var checkBox = this.parentNode.querySelector('.list-form__checkbox');
+    var deleteButtonComplete = this.parentNode.querySelector('.list-form__remove-button');
     checkBox.removeEventListener('change', taskIncomplete);
     deleteButtonComplete.removeEventListener('click', deleteTask);
 
@@ -141,8 +141,8 @@ var taskCompleted = function () {
   var taskIncomplete = function () {
     console.log("Incomplete Task...");
   // Remove event listeners from the checkbox and delete button
-var checkBox = this.parentNode.querySelector('.list-form_checkbox');
-var deleteButtonIncomplete = this.parentNode.querySelector('.list-form_remove-button');
+var checkBox = this.parentNode.querySelector('.list-form__checkbox');
+var deleteButtonIncomplete = this.parentNode.querySelector('.list-form__remove-button');
 checkBox.removeEventListener('change', taskIncomplete);
 deleteButtonIncomplete.removeEventListener('click', deleteTask);
 
@@ -174,9 +174,9 @@ addButton.addEventListener("click",ajaxRequest);
 var bindTaskEvents=function(taskListItem, checkBoxEventHandler){
     console.log("bind list item events");
     //select ListItems children
-    var checkBox = taskListItem.querySelector('.list-form_checkbox');
-    var editButton = taskListItem.querySelector('.list-form_edit-button');
-    var deleteButton = taskListItem.querySelector('.list-form_remove-button');
+    var checkBox = taskListItem.querySelector('.list-form__checkbox');
+    var editButton = taskListItem.querySelector('.list-form__edit-button');
+    var deleteButton = taskListItem.querySelector('.list-form__remove-button');
 
     // Remove existing event listeners from the checkbox and delete button
     checkBox.removeEventListener('change', taskCompleted);
