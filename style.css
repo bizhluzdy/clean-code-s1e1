@@ -10,10 +10,10 @@
   display: block;
   text-align: right;
 }
-.header_item-img {
+.header__item-img {
   width: 100%;
 }
-.header_item-link {
+.header__item-link {
   font-family: fantasy, cursive;
 }
 
@@ -29,8 +29,8 @@
   width: 500px;
   margin: 0 auto 0;
 }
-.list-form_text,
-.list-form_label {
+.list-form__text,
+.list-form__label {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
@@ -52,10 +52,10 @@ input,
 button {
   outline: none;
 }
-.list-form_edit-button,
-.list-form_add-button,
-.list-form_remove-button,
-.list-form_save-button {
+.list-form__edit-button,
+.list-form__add-button,
+.list-form__remove-button,
+.list-form__save-button {
   background: none;
   border: 0px;
   color: #888;
@@ -64,10 +64,10 @@ button {
   font-family: Lato, sans-serif;
   cursor: pointer;
 }
-.list-form_edit-button:hover,
-.list-form_add-button:hover,
-.list-form_remove-button:hover,
-.list-form_save-button:hover  {
+.list-form__edit-button:hover,
+.list-form__add-button:hover,
+.list-form__remove-button:hover,
+.list-form__save-button:hover  {
   color: #3a3a3a;
 }
 /* Heading */
@@ -80,7 +80,7 @@ button {
   margin: 0;
   text-transform: uppercase;
 }
-.list-form_text {
+.list-form__text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -92,13 +92,13 @@ button {
   font-family: Lato, sans-serif;
   color: #888;
 }
-.list-form_text:focus {
+.list-form__text:focus {
   color: #333;
 }
 
 /* New Task */
-.list-form_text,
-.list-form_label {
+.list-form__text,
+.list-form__label {
   width: 318px;
 }
 
@@ -113,43 +113,43 @@ button {
   align-items: center;
 }
 
-.list-form_checkbox {
+.list-form__checkbox {
   margin: 0 10px;
 }
-.list-form_label {
+.list-form__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
-.list-form_text {
+.list-form__text {
   width: 226px;
 }
-.list-form_remove-button_img {
+.list-form__button-img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.list-form_remove-button_img:hover {
+.list-form__button-img:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-#completed-tasks .list-form_label {
+#completed-tasks .list-form__label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul .list-form_text {
+ul .list-form__text {
   display: none;
 }
 
-.list-form_edit .list-form_text {
+.list-form__edit .list-form__text {
   display: inline-block;
   width: 224px;
 }
 
-.list-form_edit .list-form_label {
+.list-form__edit .list-form__label {
   display: none;
 }
